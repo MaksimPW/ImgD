@@ -1,5 +1,6 @@
 GEM
   remote: https://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
     actionmailer (4.2.5)
       actionpack (= 4.2.5)
@@ -104,6 +105,23 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.2.5)
       sprockets-rails
+    rails-assets-bootstrap (3.2.0)
+      rails-assets-jquery (>= 1.9.0)
+    rails-assets-jquery (2.1.4)
+    rails-assets-modernizr (3.3.0)
+    rails-assets-pixi-editor (0.0.2)
+      rails-assets-bootstrap (~> 3.2.0)
+      rails-assets-jquery (~> 2.1.1)
+      rails-assets-pixi.js (~> 1.6.1)
+      rails-assets-seiyria-bootstrap-slider (~> 3.1.0)
+      rails-assets-spectrum (~> 1.5.0)
+    rails-assets-pixi.js (1.6.1)
+    rails-assets-seiyria-bootstrap-slider (3.1.0)
+      rails-assets-bootstrap
+      rails-assets-jquery
+      rails-assets-modernizr
+    rails-assets-spectrum (1.5.2)
+      rails-assets-jquery (>= 1.7.2)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.7)
@@ -198,6 +216,12 @@ DEPENDENCIES
   jquery-rails
   pg (= 0.18.4)
   rails (= 4.2.5)
+  rails-assets-bootstrap!
+  rails-assets-jquery!
+  rails-assets-pixi-editor!
+  rails-assets-pixi.js!
+  rails-assets-seiyria-bootstrap-slider!
+  rails-assets-spectrum!
   rails_12factor (= 0.0.3)
   rspec-rails
   sass-rails (~> 5.0)

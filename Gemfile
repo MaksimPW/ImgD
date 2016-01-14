@@ -29,6 +29,16 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-pixi-editor'
+  gem 'rails-assets-pixi.js'
+  gem 'rails-assets-seiyria-bootstrap-slider'
+  gem 'rails-assets-spectrum'
+  gem 'rails-assets-bootstrap'
+  gem 'rails-assets-jquery'
+
+end
+
 group :development, :test do
 	gem 'sqlite3'
 	gem 'rspec-rails'
