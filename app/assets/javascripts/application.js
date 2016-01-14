@@ -18,3 +18,5 @@
 
 //= require seiyria-bootstrap-slider
 //= require pixi.js/pixi.js
+//= require pixi-editor/pixi-editor
+//= require spectrum/spectrum
