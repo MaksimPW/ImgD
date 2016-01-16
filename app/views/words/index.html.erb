@@ -15,7 +15,7 @@
   <tbody>
     <% @words.each do |word| %>
       <tr>
-        <td><%= word.img %></td>
+        <td><%= image_tag word.img.url(:medium) %></td>
         <td><%= word.word %></td>
         <td><%= word.desc %></td>
         <td><%= link_to 'Show', word %></td>
