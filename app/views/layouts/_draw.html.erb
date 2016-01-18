@@ -10,8 +10,8 @@
       var editor1 = null;
       $(function(){
     editor1 = new editor('view', 650, 400); 
-    editor1.onSave(function(image){         
-        var win = window.open(image);
+    editor1.onSave(function(image){    
+        document.getElementById('word_img').value = image;
     });
       });     
   </script>

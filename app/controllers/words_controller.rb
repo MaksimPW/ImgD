@@ -24,6 +24,10 @@ class WordsController < ApplicationController
   # POST /words
   # POST /words.json
   def create
+    
+    #Decode in *.png
+    require 'base64'
+
     @word = Word.new(word_params)
 
     respond_to do |format|

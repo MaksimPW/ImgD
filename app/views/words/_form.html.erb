@@ -11,12 +11,9 @@
     </div>
   <% end %>
 
-
   <%= render 'layouts/draw' %>
-  
   <div class="field">
-    <%= f.label :img %><br>
-    <%= f.file_field :img %>
+    <%= f.hidden_field :img %>
   </div>
   <div class="field">
     <%= f.label :word %><br>
