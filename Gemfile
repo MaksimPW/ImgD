@@ -6,6 +6,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 
 gem 'paperclip'
+gem 'aws-sdk'
 gem 'bootstrap-sass'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
@@ -37,7 +38,6 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-spectrum'
   gem 'rails-assets-bootstrap'
   gem 'rails-assets-jquery'
-
 end
 
 group :development, :test do
