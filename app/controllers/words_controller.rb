@@ -4,7 +4,8 @@ class WordsController < ApplicationController
   # GET /words
   # GET /words.json
   def index
-    @words = Word.all
+    ## perform a paginated query:
+    @words = Word.paginate(:page => params[:page], :per_page => 5)
   end
 
   # GET /words/1

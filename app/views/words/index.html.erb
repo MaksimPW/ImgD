@@ -24,10 +24,10 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
 <%= link_to 'New Word', new_word_path %>
+<br>
+<%= will_paginate @words, renderer: BootstrapPagination::Rails %>
+<br>
 
 <script>
 //View Description
