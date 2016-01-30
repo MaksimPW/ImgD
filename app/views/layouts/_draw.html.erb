@@ -10,14 +10,18 @@
       var editor1 = null;
       $(function(){
     editor1 = new editor('view', 650, 400);
+    //Create word img button
+    $('body').on('click','#click_save_img', function(image){
+      document.getElementById('word_img').value = editor1.getImage();
+      console.log("onSave click target");
+    });
+    //Standart button
     editor1.onSave(function(image){
         document.getElementById('word_img').value = image;
+        console.log("onSave");
     });
       });
-      $('.click_save_img').click(save_img);
-      var save_img = function(){
-        document.getElementById('word_img').value = image;
-      }
+
   </script>
 
     <div class="container">
