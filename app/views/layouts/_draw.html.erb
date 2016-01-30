@@ -9,11 +9,15 @@
   <script type="text/javascript">
       var editor1 = null;
       $(function(){
-    editor1 = new editor('view', 650, 400); 
-    editor1.onSave(function(image){    
+    editor1 = new editor('view', 650, 400);
+    editor1.onSave(function(image){
         document.getElementById('word_img').value = image;
     });
-      });     
+      });
+      $('.click_save_img').click(save_img);
+      var save_img = function(){
+        document.getElementById('word_img').value = image;
+      }
   </script>
 
     <div class="container">
