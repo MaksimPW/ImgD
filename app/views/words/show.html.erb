@@ -1,19 +1,22 @@
 <p id="notice"><%= notice %></p>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th class="col-md-2">Img-association</th>
+      <th class="col-md-4">Word</th>
+      <th class="col-md-4">Description</th>
+    </tr>
+  </thead>
 
-<p>
-  <strong>Img-association:</strong>
-  <%= image_tag @word.img.url(:medium) %>
-</p>
-
-<p>
-  <strong>Word:</strong>
-  <%= @word.word %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @word.desc %>
-</p>
+  <tbody>
+      <tr>
+        <td>  <%= image_tag @word.img.url(:medium) %></td>
+        <td><%= @word.word %></td>
+        <td class='Description'><%= @word.desc %></td>
+      </tr>
+  </tbody>
+</table>
 
 <%= link_to 'Edit', edit_word_path(@word) %> |
 <%= link_to 'Back', words_path %>
+

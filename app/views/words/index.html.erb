@@ -1,30 +1,29 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Listing Words</h1>
-
-<table class="table">
+<h1>Listing Words:</h1>
+<%= link_to 'New Word', new_word_path, class: 'btn btn-primary btn-sm' %>
+<table class="table table-striped table-hover">
   <thead>
     <tr>
-      <th>Img-association</th>
-      <th>Word</th>
-      <th>Description <%= image_tag('eye.png', id: 'eye', size: '16') %> </th>
-      <th colspan="3"></th>
+      <th class="col-md-2">Img-association</th>
+      <th class="col-md-4">Word</th>
+      <th class="col-md-4">Description <%= image_tag('eye.png', id: 'eye', size: '16') %> </th>
+      <th class="col-md-2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @words.each do |word| %>
       <tr>
-        <td><%= image_tag word.img.url(:medium) %></td>
+        <td><%= image_tag word.img.url(:medium), size: '325x200' %></td>
         <td><%= word.word %></td>
         <td class='Description'><%= word.desc %></td>
-        <td><%= link_to 'Edit', edit_word_path(word) %></td>
-        <td><%= link_to 'Destroy', word, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_word_path(word) %>
+        <%= link_to 'Destroy', word, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<%= link_to 'New Word', new_word_path %>
+<%= link_to 'New Word', new_word_path, class: 'btn btn-primary btn-sm' %>
 <br>
 <%= will_paginate @words, renderer: BootstrapPagination::Rails %>
 <br>
@@ -32,6 +31,6 @@
 <script>
 //View Description
 $('body').on('click','#eye', function(){
-    $(".Description").toggle(0);
+    $(".Description").toggle(10);
 });
 </script>

@@ -1,9 +1,27 @@
-<div class="blog-masthead">
+<div class="navbar navbar-default navbar-fixed-top red">
   <div class="container">
-    <nav class="blog-nav">
-        <%= link_to "Home",    root_path, class: "blog-nav-item active"%>
-        <%= link_to "About",    '#', class: "blog-nav-item"%>
-   		<%= link_to "nav-element", '#', class: "blog-nav-item"%>
-    </nav>
+    <div class="navbar-header">
+      <a href="../" class="navbar-brand">ImgDictionary</a>
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar-main">
+      <ul class="nav navbar-nav">
+        <li>
+        	<%= link_to "Home", root_path %>
+        </li>
+        <li>
+        	<%= link_to "About", '#' %>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Name", '#' %></li>
+        <li><%= link_to "Log in", '#' %></li>
+      </ul>
+    </div>
   </div>
 </div>
