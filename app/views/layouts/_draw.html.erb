@@ -7,26 +7,69 @@
   }
   </style>
   <script type="text/javascript">
-      var editor1 = null;
-      $(function(){
+    var editor1 = null;
+    $(function(){
+
     editor1 = new editor('view', 650, 400);
+    
     //Create word img button
     $('body').on('click','#click_save_img', function(image){
       document.getElementById('word_img').value = editor1.getImage();
       console.log("onSave click target");
     });
+    
     //Standart button
     editor1.onSave(function(image){
         document.getElementById('word_img').value = image;
         console.log("onSave");
     });
       });
+
+    function startTimer() {
+      var my_timer = document.getElementById("my_timer");
+      var time = my_timer.innerHTML;
+
+      var arr = time.split(":");
+      var h = arr[0];
+      var m = arr[1];
+      var s = arr[2];
+      if (s == 0) {
+        if (m == 0) {
+          if (h == 0) {
+            $('#click_save_img').removeClass( 'disabled' );
+            return;
+          }
+          h--;
+          m = 60;
+          if (h < 10) h = "0" + h;
+        }
+        m--;
+        if (m < 10) m = "0" + m;
+        s = 59;
+      }
+      else s--;
+      if (s < 10) s = "0" + s;
+      document.getElementById("my_timer").innerHTML =h+":"+m+":"+s;
+      setTimeout(startTimer, 1000);
+    }
+
+      //call startTimer();
+      startTimer();
+      //Disable button new word
+      $("#click_save_img").addClass("disabled");
+      //if you click close_timer
+      $('body').on('click','#close_timer', function(image){
+          alert("You shut down timer");
+          $('#click_save_img').removeClass( 'disabled' );
+      });
+
   </script>
 
-    <div class="container">
-  <div class="header">
-      <h3>Draw your association with this word</h3>
-  </div>
+  <div class="container">
+    <div class="alert alert-dismissible alert-success">
+      <button type="btn" class="close" id="close_timer" data-dismiss="alert">x</button>
+      <p>You need to spend at least <strong><span id="my_timer">00:05:00</span></strong> to create a Img-Association before you can add the word to the dictionary</p>
+    </div>
   <div class="well" id="view">      
   </div>
     </div>
