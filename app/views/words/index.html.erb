@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 <h1>Listing Words:</h1>
-<%= link_to 'New Word', new_word_path, class: 'btn btn-primary btn-sm' %>
+<%= link_to t('words.new'), new_word_path, class: 'btn btn-primary btn-sm' %>
 <table class="table">
   <thead>
     <tr>
-      <th class="col-md-2">Img-association</th>
-      <th class="col-md-4">Word</th>
-      <th class="col-md-4">Description <%= image_tag('eye.png', id: 'eye', size: '16') %> </th>
+      <th class="col-md-2"><%= t('words.img-association') %></th>
+      <th class="col-md-4"><%= t('words.word') %></th>
+      <th class="col-md-4"><%= t('words.desc') %> <%= image_tag('eye.png', id: 'eye', size: '16') %> </th>
       <th class="col-md-2"></th>
     </tr>
   </thead>
@@ -17,13 +17,13 @@
         <td><%= image_tag word.img.url(:medium), size: '325x200' %></td>
         <td><%= word.word %></td>
         <td class='Description'><%= word.desc %></td>
-        <td><%= link_to 'Edit', edit_word_path(word) %>
-        <%= link_to 'Destroy', word, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('control.edit'), edit_word_path(word) %>
+        <%= link_to t('control.destroy'), word, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<%= link_to 'New Word', new_word_path, class: 'btn btn-primary btn-sm' %>
+<%= link_to t('words.new'), new_word_path, class: 'btn btn-primary btn-sm' %>
 <br>
 <%= will_paginate @words, renderer: BootstrapPagination::Rails %>
 <br>

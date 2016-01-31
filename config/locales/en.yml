@@ -20,4 +20,22 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  menu:
+    name: "ImgDictionary"
+    help: "Help"
+    about: "About"
+  control: 
+    back: "Back"
+    next: "Next"
+    edit: "Edit"
+    destroy: "Destroy"
+  timer: 
+    end_status: "to create a Img-Association before you can add the word to the dictionary"
+    start_status: "You need to spend at least"
+  words: 
+    desc: "Description"
+    new: "New word"
+    edit: "Edit word"
+    submit: "Create"
+    word: "Word"
+    img-association: "img-association"

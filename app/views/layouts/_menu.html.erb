@@ -1,7 +1,7 @@
 <div class="navbar navbar-default navbar-fixed-top red">
   <div class="container">
     <div class="navbar-header">
-      <a href="../" class="navbar-brand">ImgDictionary</a>
+      <a href="../" class="navbar-brand"><%= t('menu.name') %></a>
       <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -11,15 +11,21 @@
     <div class="navbar-collapse collapse" id="navbar-main">
       <ul class="nav navbar-nav">
         <li>
-        	<%= link_to "Home", root_path %>
+        	<%= link_to t('menu.about'), '#' %>
         </li>
         <li>
-        	<%= link_to "About", '#' %>
+          <%= link_to t('menu.help'), root_path %>
         </li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Name", '#' %></li>
+        <li>
+          <% if I18n.locale == I18n.default_locale %>
+            <%= link_to "En", :locale=>'en'%>
+          <% else %>
+            <%= link_to "Ru", :locale=>'ru'%>
+          <%end%>
+        </li>
         <li><%= link_to "Log in", '#' %></li>
       </ul>
     </div>

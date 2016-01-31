@@ -16,14 +16,14 @@
     <%= f.hidden_field :img %>
   </div>
   <div class="form-group">
-    <%= f.label :word, class: 'control-label' %><br>
+    <%= f.label :word, t('words.word'), class: 'control-label' %><br>
     <%= f.text_field :word, class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :description, class: 'control-label' %><br>
+    <%= f.label :desc, t('words.desc'), class: 'control-label' %><br>
     <%= f.text_field :desc, class: 'form-control' %>
   </div>
   <div class="actions">
-    <%= f.submit :id => "click_save_img", class: 'btn btn-default' %>
+    <%= f.submit :id => "click_save_img", class: 'btn btn-default', value: t('words.submit') %>
   </div>  
 <% end %>

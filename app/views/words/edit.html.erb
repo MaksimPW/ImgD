@@ -1,6 +1,5 @@
-<legend>Edit word</legend>
+<legend><%= t('words.edit') %></legend>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @word %> |
-<%= link_to 'Back', words_path %>
+<%= link_to t('control.back'), words_path %>
