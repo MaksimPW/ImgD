@@ -1,4 +1,5 @@
 class WordsController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_word, only: [:show, :edit, :update, :destroy]
 
   # GET /words
