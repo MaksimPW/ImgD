@@ -26,7 +26,16 @@
             <%= link_to "Ru", :locale=>'ru'%>
           <%end%>
         </li>
-        <li><%= link_to "Log in", '#' %></li>
+        <li>
+          <% if user_signed_in? %>
+              <%= link_to t('menu.logout'), destroy_user_session_path, :method => :delete %>
+          <% else %>
+              <%= link_to t('menu.login'), new_user_session_path %>
+        </li>
+        <li>
+              <%= link_to t('menu.reg'), new_user_registration_path %>
+          <% end %>
+        </li>
       </ul>
     </div>
   </div>

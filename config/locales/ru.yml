@@ -10,6 +10,9 @@ ru:
     name: "ImgDictionary"
     help: "Помощь"
     about: "О приложении"
+    login: "Войти"
+    reg: "Зарегистрироваться"
+    logout: "Выйти"
   control: 
     back: "Назад"
     next: "Вперед"
