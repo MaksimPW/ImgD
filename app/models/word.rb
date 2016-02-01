@@ -1,4 +1,9 @@
 class Word < ActiveRecord::Base
+	validates :img, presence: true ## implemented using the button create
+	validates :word, presence: true
+	validates :desc, presence: true
+
+
   has_attached_file :img, :s3_protocol => :https, styles: { medium: "650x400>", thumb: "100x100>" }, default_url: "/imgs/:style/imgD.jpg"
   validates_attachment_content_type :img, content_type: /\Aimage\/.*\Z/
 
