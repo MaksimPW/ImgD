@@ -30,7 +30,7 @@ class WordsController < ApplicationController
     #Decode in *.png
     require 'base64'
 
-    @word = Word.new(word_params)
+    @word = current_user.words.new(word_params)
 
     respond_to do |format|
       if @word.save
@@ -75,6 +75,6 @@ class WordsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def word_params
-      params.require(:word).permit(:img, :word, :desc)
+      params.require(:word).permit(:img, :word, :desc, :user_id)
     end
 end

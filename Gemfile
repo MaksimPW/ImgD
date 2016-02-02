@@ -9,6 +9,7 @@ gem 'will_paginate', '3.1.0'
 gem 'will_paginate-bootstrap'
 
 gem 'devise', '3.5.6'
+gem 'cancan'
 
 gem 'paperclip'
 gem 'aws-sdk', '< 2.0'
