@@ -55,5 +55,6 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
+  # For RSpec
   config.include Capybara::DSL
 end

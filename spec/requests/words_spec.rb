@@ -1,10 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe "Words", type: :request do
-  describe "GET /words" do
-    it "works! (now write some real specs)" do
-      get words_index_path
-      expect(response).to have_http_status(200)
-    end
-  end
+describe "Words" do
+subject { page }
+	describe "Index" do
+		before { visit about_path }
+		it { should have_title('Img') }
+		it { should have_content('Словарь') }
+		it { should have_content('Создать новое слово') }
+		it { should have_content('Изображение') }
+	end
 end
+
+
