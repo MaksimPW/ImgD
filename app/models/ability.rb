@@ -4,6 +4,7 @@ class Ability
   def initialize(user)
     user ||= User.new # guest user (not logged in)
     if user
+        can :create, @word
         can :update, Word, :user_id => user.id
         can :destroy, Word, :user_id => user.id
     end

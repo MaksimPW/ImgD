@@ -28,9 +28,15 @@
         </li>
         <li>
           <% if user_signed_in? %>
-              <%= link_to t('menu.logout'), destroy_user_session_path, :method => :delete %>
+            <%= link_to destroy_user_session_path, :method => :delete do %>
+              <%= t('menu.logout') %>
+              <span class="glyphicon glyphicon-log-out"></span>
+            <% end %>
           <% else %>
-              <%= link_to t('menu.login'), new_user_session_path %>
+            <%= link_to new_user_session_path do %>
+              <span class="glyphicon glyphicon-log-in"></span>
+              <%= t('menu.login') %>
+            <% end %>
         </li>
         <li>
               <%= link_to t('menu.reg'), new_user_registration_path %>

@@ -1,2 +1,61 @@
-<h1><%= t('about.title') %></h1>
-<p><%= t('about.description') %></p>
+<div class="jumbotron">
+		<h1>ImgDictionary</h1>
+		<h2>Изучайте иностранные слова с помощью изображений-ассоциаций</h2>
+		<br>
+
+  	    <% if !user_signed_in? %>
+			<%= link_to new_user_session_path, :class => "btn btn-success btn-lg" do %>
+			  <span class="glyphicon glyphicon-log-in"></span>
+			  <%= t('menu.login') %>
+			<% end %>
+
+			<%= link_to new_user_registration_path, :class => "btn btn-primary btn-lg" do %>
+			  <span class="glyphicon glyphicon-ok"></span>
+			  <%= t('menu.reg') %>
+			<% end %>
+        <% end %>
+</div>
+
+        <div class="row">
+
+          <div class="col-lg-4">
+            <div class="bs-component">
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                  <h3 class="panel-title">About</h3>
+                </div>
+                <div class="panel-body">
+					<p><%= t('about.description') %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="bs-component">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Why?</h3>
+                </div>
+                <div class="panel-body">
+                  Panel content
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="panel panel-default">
+			  <div class="panel-body">
+			    Example
+			  </div>
+			</div>
+
+            <div class="panel panel-default">
+			  <div class="panel-body">
+			    Example
+			  </div>
+			</div>
+
+          </div>
+        </div>
