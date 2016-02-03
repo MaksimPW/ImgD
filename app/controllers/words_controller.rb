@@ -1,12 +1,16 @@
 class WordsController < ApplicationController
+
+  
+  #load_and_authorize_resource ## for CanCan control
   before_filter :authenticate_user!
   before_action :set_word, only: [:show, :edit, :update, :destroy]
 
   # GET /words
   # GET /words.json
   def index
-    ## perform a paginated query:
-    @words = Word.paginate(:page => params[:page], :per_page => 5)
+    ## perform a paginated query
+    ## use current_user for view current_user.words
+    @words = current_user.words.paginate(:page => params[:page], :per_page => 5)
   end
 
   # GET /words/1

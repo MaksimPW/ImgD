@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 <h1>Listing Words:</h1>
-<%= link_to t('words.new'), new_word_path, class: 'btn btn-primary btn-sm' %>
+<% if can? :create, @word %>
+  <%= link_to t('words.new'), new_word_path, class: 'btn btn-primary btn-sm' %>
+<% end %>
 <table class="table">
   <thead>
     <tr>
@@ -17,13 +19,21 @@
         <td><%= image_tag word.img.url(:medium), size: '325x200' %></td>
         <td><%= word.word %></td>
         <td class='Description'><%= word.desc %></td>
-        <td><%= link_to t('control.edit'), edit_word_path(word) %>
-        <%= link_to t('control.destroy'), word, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+<% if can? :update, word %>
+        <%= link_to t('control.edit'), edit_word_path(word) %>
+<% end %>
+<% if can? :destroy, word %>
+        <%= link_to t('control.destroy'), word, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<%= link_to t('words.new'), new_word_path, class: 'btn btn-primary btn-sm' %>
+<% if can? :create, @word %>
+  <%= link_to t('words.new'), new_word_path, class: 'btn btn-primary btn-sm' %>
+<% end %>
 <br>
 <%= will_paginate @words, renderer: BootstrapPagination::Rails %>
 <br>
