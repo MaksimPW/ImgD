@@ -10,5 +10,3 @@ subject { page }
 		it { should have_content('Изображение') }
 	end
 end
-
-

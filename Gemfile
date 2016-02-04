@@ -49,7 +49,7 @@ end
 group :development, :test do
 	gem 'sqlite3'
 	gem 'rspec-rails'
-  gem 'factory_girl', '~> 4.5'
+  gem 'factory_girl_rails', '~> 4.5'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 end
