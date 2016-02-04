@@ -3,5 +3,5 @@ def login(email, password)
   click_link "Войти"
   fill_in :user_email, with: email
   fill_in :user_password, with: password
-  click_button "Войти"
+  click_button "Log in"
 end

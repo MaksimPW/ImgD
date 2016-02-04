@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 feature "signing in" do 
-
 	let(:user) {FactoryGirl.create(:user)}
 
 	def fill_signin_fields
