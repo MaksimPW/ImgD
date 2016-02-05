@@ -1,4 +1,13 @@
 ru:
+  devise_for_views:
+    login: "Войти"
+    signup: "Зарегистрироваться"
+    email: "Почта"
+    password: "Пароль"
+    password_confirmation: "Повторите пароль"
+    remember_me: "Запомнить меня"
+    forgot_password: "Забыли пароль?"
+    characters minimum: "минимальное количество символов"
   about:
     title: "ImgDictionary - изучайте иностранные слова с помощью картинок-ассоциаций"
     description: >

@@ -20,6 +20,15 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  devise_for_views:
+    login: "log in"
+    signup: "sign up"
+    email: "email"
+    password: "password"
+    password_confirmation: "password confirmation"
+    remember_me: "remember me"
+    forgot_password: "forgot password?"
+    characters minimum: "characters minimum"
   menu:
     name: "ImgDictionary"
     help: "Help"
