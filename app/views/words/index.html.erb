@@ -21,10 +21,17 @@
         <td class='Description'><%= word.desc %></td>
         <td>
 <% if can? :update, word %>
-        <%= link_to t('control.edit'), edit_word_path(word) %>
+        <%= link_to edit_word_path(word)  do %>
+            <span class="glyphicon glyphicon-pencil"></span>
+            <%= t('control.edit') %>
+        <% end %>
 <% end %>
 <% if can? :destroy, word %>
-        <%= link_to t('control.destroy'), word, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <br>
+        <%= link_to word, method: :delete, data: { confirm: t('control.sure') }  do %>
+            <span class="glyphicon glyphicon-trash"></span>
+            <%= t('control.destroy') %>
+        <% end %>
 <% end %>
         </td>
       </tr>

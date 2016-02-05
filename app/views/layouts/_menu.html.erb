@@ -1,7 +1,10 @@
 <div class="navbar navbar-default navbar-fixed-top red">
   <div class="container">
     <div class="navbar-header">
-      <a href="../" class="navbar-brand"><span class="glyphicon glyphicon-book"></span> <%= t('menu.name') %></a>
+        <%= link_to root_path, class: "navbar-brand"  do %>
+            <span class="glyphicon glyphicon-book"></span>
+            <%= t('menu.name') %>
+        <% end %>
       <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>

@@ -38,6 +38,7 @@ en:
     next: "Next"
     edit: "Edit"
     destroy: "Destroy"
+    sure: "Are you sure?"
   timer: 
     end_status: "to create a Img-Association before you can add the word to the dictionary"
     start_status: "You need to spend at least"
