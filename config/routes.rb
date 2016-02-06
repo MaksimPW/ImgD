@@ -1,21 +1,34 @@
 Rails.application.routes.draw do
   
+  #scope ':locale', locale: /#{I18n.available_locales.join("|")}/ do
+  # application routes...
+
+
+scope '/:locale', locale: /#{I18n.available_locales.join('|')}/ do
   devise_for :users
-
-devise_scope :user do
-  authenticated :user do
-    root 'words#index', as: :authenticated_root
-  end
-
-  unauthenticated do
-    root 'about#index', as: :unauthenticated_root
-  end
-end
+  resources :words 
+  #root 'words#index'
+  root to: redirect("/#{I18n.default_locale}", status: 302), as: :redirected_root
+#devise_scope :user do
+#  authenticated :user do
+#    root 'words#index', as: :authenticated_root
+#  end
+#
+#  unauthenticated do
+#    root 'about#index', as: :unauthenticated_root
+#  end
+#end
 
   get 'about' => 'about#index'
-
-  resources :words
   root 'words#index'
+  #end
+  
+end
+
+# Catch all requests without a locale and redirect to the default...
+#match '*path', to: redirect("/#{I18n.default_locale}/%{path}"), constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
+#match '', to: redirect("/#{I18n.default_locale}")
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

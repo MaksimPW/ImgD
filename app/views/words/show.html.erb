@@ -2,21 +2,21 @@
 <table class="table table-striped table-hover">
   <thead>
     <tr>
-      <th class="col-md-2">Img-association</th>
-      <th class="col-md-4">Word</th>
-      <th class="col-md-4">Description</th>
+      <th class="col-md-2"><%= t('words.img-association') %></th>
+      <th class="col-md-4"><%= t('words.word') %></th>
+      <th class="col-md-4"><%= t('words.desc') %></th>
     </tr>
   </thead>
 
   <tbody>
       <tr>
-        <td>  <%= image_tag @word.img.url(:medium) %></td>
+        <td><%= image_tag @word.img.url(:medium) %></td>
         <td><%= @word.word %></td>
         <td class='Description'><%= @word.desc %></td>
       </tr>
   </tbody>
 </table>
 
-<%= link_to 'Edit', edit_word_path(@word) %> |
-<%= link_to 'Back', words_path %>
+<%= link_to t('control.edit'), edit_word_path(@word) %> |
+<%= link_to t('control.back'), words_path %>
 
