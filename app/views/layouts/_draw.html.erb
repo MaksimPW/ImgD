@@ -1,4 +1,4 @@
-  <style> 
+  <style>
   /* Customize container */
   @media (min-width: 768px) {
     .container {
@@ -11,13 +11,13 @@
     $(function(){
 
     editor1 = new editor('view', 650, 400);
-    
+
     //Create word img button
     $('body').on('click','#click_save_img', function(image){
       document.getElementById('word_img').value = editor1.getImage();
       console.log("onSave click target");
     });
-    
+
     //Standart button
     editor1.onSave(function(image){
         document.getElementById('word_img').value = image;
@@ -54,7 +54,14 @@
     }
 
       //call startTimer();
-      startTimer();
+      var ready;
+      ready = function() {
+        startTimer();
+      };
+      $(document).ready(ready);
+      $(document).on('page:load', ready);
+
+
       //Disable button new word
       $("#click_save_img").addClass("disabled");
       //if you click close_timer
@@ -62,13 +69,13 @@
           alert("You shut down timer");
           $('#click_save_img').removeClass( 'disabled' );
       });
-      
+
   </script>
   <div class="container">
     <div class="alert alert-dismissible alert-success">
       <button type="btn" class="close" id="close_timer" data-dismiss="alert">x</button>
       <p><%= t('timer.start_status') %> <strong><span id="my_timer">00:05:00</span></strong> <%= t('timer.end_status') %></p>
     </div>
-  <div class="well" id="view">      
+  <div class="well" id="view">
   </div>
     </div>
